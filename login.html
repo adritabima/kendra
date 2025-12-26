@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login - Adrita Bima Kendra</title>
+    <style>
+        body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:#f3f4f6;display:flex;align-items:center;justify-content:center;height:100vh}
+        .card{background:#fff;padding:28px;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.08);width:360px}
+        h2{margin:0 0 12px;color:#111;font-size:20px}
+        label{display:block;font-size:13px;color:#444;margin-top:12px}
+        input[type="text"],input[type="password"]{width:100%;padding:10px 12px;border:1px solid #e6e9ee;border-radius:8px;margin-top:6px;font-size:14px}
+        .actions{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+        .btn{background:#111;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;font-weight:600}
+        .btn.secondary{background:transparent;color:#111;border:1px solid #e6e9ee}
+        .note{font-size:13px;color:#666;margin-top:10px}
+        .error{color:#b00020;font-size:13px;margin-top:10px}
+    </style>
+</head>
+<body>
+    <form class="card" id="loginForm" novalidate>
+        <h2>Sign in to Adrita Bima Kendra</h2>
+        <label for="userid">User ID</label>
+        <input id="userid" name="userid" type="text" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+        <div class="actions">
+            <button type="submit" class="btn">Login</button>
+            <a href="Adrita Bima Kendra.html" class="btn secondary">Back</a>
+        </div>
+
+        <div class="note">Use the credentials provided by you to sign in.</div>
+        <div id="msg" class="error" role="alert" aria-live="polite"></div>
+    </form>
+
+    <script>
+        (function(){
+            const form = document.getElementById('loginForm');
+            const msg = document.getElementById('msg');
+            const CORRECT_USER = 'Adrita@2025';
+            const CORRECT_PASS = 'Kuntal@1234';
+
+            form.addEventListener('submit', function(e){
+                e.preventDefault();
+                msg.textContent = '';
+                const user = form.userid.value.trim();
+                const pass = form.password.value;
+                if(user === CORRECT_USER && pass === CORRECT_PASS){
+                    // On success, set login flag then redirect to portal
+                    alert('Login successful');
+                    try { localStorage.setItem('loggedIn', 'true'); sessionStorage.setItem('loggedIn', 'true'); } catch(e) {}
+                    window.location.href = 'portal.html';
+                } else {
+                    msg.textContent = 'Incorrect user ID or password.';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

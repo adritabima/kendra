@@ -1,0 +1,9 @@
+:root{--bg:#f7f9fc;--card:#ffffff;--accent:#2563eb;--muted:#6b7280}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Segoe UI,system-ui,Arial}
+body{background:var(--bg);color:#0f172a;display:flex;align-items:center;justify-content:center;min-height:100vh}
+header{max-width:800px;padding:2rem;text-align:center}
+.hero{background:var(--card);padding:2rem;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,.06)}
+h1{font-size:1.6rem;margin-bottom:.5rem}
+h2{font-size:1.25rem;margin-bottom:1rem;color:var(--muted)}
+button{background:var(--accent);color:white;border:0;padding:.6rem 1.1rem;border-radius:8px;font-weight:600;cursor:pointer}
+button:hover{filter:brightness(.95)}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Kuntal Chakraborti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #welcome-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: #4a148c;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            z-index: 1000;
+            animation: fadeOut 5s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 60px;
+            height: 100%;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.3s;
+        }
+
+        .sidebar:hover {
+            width: 250px;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .sidebar:hover .menu-icon {
+            color: red;
+        }
+
+        .menu-list {
+            display: none;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .sidebar:hover .menu-list {
+            display: flex;
+        }
+
+        .menu-item {
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #d32f2f;
+        }
+
+        .profile-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #6a1b9a;
+            padding: 20px;
+            color: white;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .profile-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            display: block;
+            margin: 0 auto 10px;
+            object-fit: cover;
+        }
+
+        .profile-box p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .profile-box a {
+            color: #fff;
+            text-decoration: underline;
+            display: block;
+            margin: 5px 0;
+        }
+
+        #details-modal {
+            display: none;
+            position: fixed;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            z-index: 2000;
+        }
+
+        #details-modal h2 {
+            margin-top: 0;
+        }
+
+        #details-modal button {
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1500;
+        }
+
+        .center-menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Plain linked logos (no boxed menu items) */
+        .logo-link {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            color: inherit;
+        }
+
+        .logo-link img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+            object-fit: contain;
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        (function(){
+            // Redirect to login if not authenticated. Accepts localStorage or sessionStorage.
+            try {
+                const fromLocal = localStorage.getItem('loggedIn');
+                const fromSession = sessionStorage.getItem('loggedIn');
+                const logged = (fromLocal === 'true' || fromSession === 'true');
+                console.debug('Auth check - local:', fromLocal, 'session:', fromSession);
+                if(!logged){
+                    // Use replace so back doesn't return here
+                    location.replace('login.html');
+                }
+            } catch(err) {
+                console.error('Auth check error', err);
+                location.replace('login.html');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="welcome-screen">Welcome, Kuntal Chakraborti!</div>
+
+    <div class="sidebar">
+        <div class="menu-icon">☰</div>
+        <div class="menu-list">
+            <a href="https://licindia.in" class="menu-item">LICI</a>
+            <a href="https://nicportal.nic.co.in/nicportal/signin/login" class="menu-item">NATIONAL</a>
+            <a href="https://atom.starhealth.in/login" class="menu-item">STAR HEALTH</a>
+            <a href="https://www.pan.utiitsl.com/" class="menu-item">UTI PAN PORTAL</a>
+            <a href="https://myaadhaar.uidai.gov.in/" class="menu-item">AADHAAR</a>
+            <a href="https://i-magic.in/" class="menu-item">I-MAGIC</a>
+        </div>
+    </div>
+
+    <div class="profile-box">
+        <img src="WhatsApp Image 2025-12-23 at 7.26.45 PM.jpeg" alt="Profile Photo">
+        <p>Kuntal Chakraborti</p>
+        <a href="thanks.html">Log Out</a>
+    </div>
+
+    <div class="center-menu">
+        <a href="https://licindia.in" class="logo-link"><img src="LIC.png" alt="LIC Logo"></a>
+        <a href="https://nicportal.nic.co.in/nicportal/signin/login" class="logo-link"><img src="National.png" alt="National Logo"></a>
+        <a href="https://atom.starhealth.in/login" class="logo-link"><img src="Star.jpg" alt="Star Health Logo"></a>
+        <a href="https://i-magic.in/" class="logo-link"><img src="i magic.png" alt="I-Magic Logo"></a>
+    </div>
+
+    <!-- Details modal removed -->
+
+    <script>
+        // Hide welcome screen after 5s
+        setTimeout(() => {
+            const el = document.getElementById('welcome-screen');
+            if(el) el.style.display = 'none';
+        }, 5000);
+    </script>
+</body>
+</html>

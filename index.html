@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrita bima kendra</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background-color: #f5f6f8;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Header sits over the hero so the image reaches the very top */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+            background: transparent;
+            padding: 14px 0;
+            font-weight: 600;
+        }
+        marquee {
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        /* Highlight badge inside top marquee */
+        .marquee-badge {
+            display: inline-block;
+            background: linear-gradient(90deg,#ffd700 0%, #ffcf33 60%);
+            color: #111;
+            padding: 8px 18px;
+            border-radius: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 8px 22px rgba(12,18,30,0.18);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            transform-origin: center;
+            animation: badgePulse 3.6s ease-in-out infinite;
+        }
+        .marquee-badge::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+            filter: blur(8px);
+            opacity: 0.9;
+            animation: badgeShine 3.2s linear infinite;
+        }
+        .marquee-badge:hover { transform: scale(1.06); }
+
+        @keyframes badgePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        @keyframes badgeShine {
+            0% { left: -60%; }
+            60% { left: 120%; }
+            100% { left: 120%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-badge { animation: none; }
+            .marquee-badge::after { animation: none; }
+        }
+        /* Navigation sits under the header (keeps page flow) */
+        nav {
+            background-color: rgba(34,34,34,0.85);
+            padding: 12px;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            z-index: 20;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 15px;
+            letter-spacing: .2px;
+            display: inline-block;
+            padding: 6px 8px;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: #ffd700;
+            background: rgba(255,255,255,0.02);
+        }
+        /* Login button in navigation */
+        .login-btn {
+            background: #ffd700;
+            color: #111;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-left: 18px;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+        .login-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+            color: #111;
+        }
+        /* Hero as large background image with overlay for readable text */
+        .hero {
+            position: relative;
+            background-image: url("Kuntal.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 100%);
+            z-index: 0;
+        }
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            font-size: 48px;
+            margin-bottom: 12px;
+            text-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            line-height: 1.03;
+        }
+        .hero p {
+            position: relative;
+            z-index: 1;
+            font-size: 20px;
+            max-width: 920px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.95);
+        }
+        /* Image marquee — polished corporate style */
+        .image-marquee {
+            overflow: hidden;
+            background: #ffffff;
+            padding: 36px 0;
+        }
+        .image-marquee .marquee-track {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            will-change: transform;
+            animation: marquee 24s linear infinite;
+            padding-left: 6px;
+        }
+        .image-marquee .marquee-track img {
+            width: 520px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 12px 36px rgba(2,6,23,0.12);
+            border: 1px solid rgba(0,0,0,0.06);
+            background: #f6f7f9;
+            transition: transform .36s ease, box-shadow .36s ease, filter .36s ease;
+            filter: grayscale(12%) contrast(0.98) saturate(0.95) brightness(0.98);
+            display: block;
+        }
+        .image-marquee:hover .marquee-track { animation-play-state: paused; }
+        .image-marquee .marquee-track img:hover {
+            transform: scale(1.045);
+            filter: none;
+            box-shadow: 0 22px 54px rgba(2,6,23,0.18);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 1100px) {
+            .image-marquee .marquee-track img { width: 420px; height: 260px; }
+            .hero h1 { font-size: 40px; }
+        }
+        @media (max-width: 760px) {
+            nav { margin-top: 64px; }
+            .hero { min-height: 62vh; padding: 56px 16px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .image-marquee .marquee-track img { width: 320px; height: 200px; }
+        }
+        @media (max-width: 420px) {
+            .image-marquee .marquee-track img { width: 260px; height: 160px; }
+            .hero h1 { font-size: 24px; }
+            .hero p { font-size: 14px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .image-marquee .marquee-track { animation: none; }
+        }
+        .services {
+            padding: 40px 20px;
+            background-color: #fafafa;
+        }
+        .services h2 {
+            text-align: center;
+            color: #b8860b;
+            margin-bottom: 30px;
+        }
+        .service-box {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        /* Contact modal styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 120;
+            padding: 20px;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal {
+            background: #fff;
+            width: 100%;
+            max-width: 520px;
+            border-radius: 12px;
+            box-shadow: 0 18px 60px rgba(2,6,23,0.3);
+            overflow: hidden;
+            transform: translateY(-6px);
+            animation: modalPop .18s ease-out;
+        }
+        @keyframes modalPop { from { opacity: 0; transform: translateY(-12px) scale(.995);} to { opacity: 1; transform: translateY(0) scale(1);} }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 18px;
+            background: linear-gradient(90deg,#ffd700,#ffcf33);
+        }
+        .modal-logo { width: 52px; height: 52px; border-radius: 8px; background: #fff; display:flex;align-items:center;justify-content:center; font-weight:800; color:#b8860b; font-size:20px; }
+        .modal-title { font-weight:700; color:#222; }
+        .modal-body { padding: 18px; color: #222; background: #fff; }
+        .contact-item { display:flex; gap:12px; align-items:flex-start; margin-bottom:12px; }
+        .contact-item strong { min-width: 84px; display:inline-block; color:#444; }
+        .contact-links a { color:#0a58ca; text-decoration:none; }
+        .modal-close { position:absolute; right:10px; top:10px; background:transparent;border:0;font-size:22px;color:#222; cursor:pointer; }
+        @media (max-width:420px){ .modal { max-width: 92%; } .modal-header { padding:12px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Top Marquee Header -->
+    <header>
+        <marquee direction="left" scrollamount="6" aria-label="Top marquee">
+            <span class="marquee-badge">WELCOME TO ADRITA BIMA KENDRA</span>
+        </marquee>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="about.html" onclick="window.open('about.html','AboutAdrita','width=700,height=600,scrollbars=yes'); return false;">About Us</a>
+        <a href="services.html" onclick="window.open('services.html','ServicesAdrita','width=700,height=600,scrollbars=yes'); return false;">Services</a>
+        <a href="#" id="contact-btn">Contact</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1> অদ্রিতা বীমা কেন্দ্র </h1>
+        <p>
+            Your trusted partner for insurance, financial security, and future planning. 
+            We are committed to protecting what matters most to you and your family.
+        </p>
+    </section>
+
+    <!-- Image marquee inserted after Adrita Bima Kendra -->
+    <section class="image-marquee" aria-label="Gallery marquee">
+        <div class="marquee-track">
+            <!-- Replace these src URLs with your local images if you have them -->
+            <img src="20251214_164738.jpg" alt="Image 1">
+            <img src="20251214_121025.jpg" alt="Image 2">
+            <img src="20251214_162537.jpg" alt="Image 3">
+            <img src="20251214_115600[1].jpg" alt="Image 4">
+            <img src="20251214_120739.jpg" alt="Image 5">
+            <img src="20251214_120845.jpg" alt="Image 6">
+            <img src="20251214_121445.jpg" alt="Image 7">
+            <img src="20251214_172441.jpg" alt="Image 8">
+            <!-- Duplicate for a smooth seamless loop -->
+            <img src="20251214_164738.jpg" alt="Image 1">
+            <img src="20251214_121025.jpg" alt="Image 2">
+            <img src="20251214_162537.jpg" alt="Image 3">
+            <img src="20251214_115600[1].jpg" alt="Image 4">
+            <img src="20251214_120739.jpg" alt="Image 5">
+            <img src="20251214_120845.jpg" alt="Image 6">
+            <img src="20251214_121445.jpg" alt="Image 7">
+            <img src="20251214_172441.jpg" alt="Image 8">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-box">
+            <div class="service">
+                <h3>Life Insurance</h3>
+                <p>Secure your family’s future with reliable life insurance plans.</p>
+            </div>
+            <div class="service">
+                <h3>Health Insurance</h3>
+                <p>Comprehensive health coverage for peace of mind.</p>
+            </div>
+          <div class="service">
+<h3>Car and Bike Insurance</h3>
+<p>Legal requirement; secures futures; don't risk driving uninsured..</p>
+</div>
+      <div class="service">
+<h3>Pan Card</h3>
+<p>A PAN card is a unique 10-digit alphanumeric identifier issued by the Indian Income Tax Department, mandatory for financial transactions and taxation.</p>
+</div>    
+            <div class="service">
+                <h3>Investment Plans</h3>
+                <p>Smart investment solutions for long-term growth.</p>
+            </div>
+           <div class="service">
+<h3>Income Tax</h3>
+<p>Income Tax Filing is the annual report of your income and taxes to the government.</p>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Contact Modal -->
+    <div id="contact-modal-overlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+            <button class="modal-close" id="contact-modal-close" aria-label="Close contact dialog">×</button>
+            <div class="modal-header">
+                <div class="modal-logo" aria-hidden="true">AB</div>
+                <div>
+                    <div id="contact-modal-title" class="modal-title">Adrita Bima Kendra</div>
+                    <div style="font-size:12px;color:#222;opacity:.85">Contact & Location</div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="contact-item">
+                    <strong>Location:</strong>
+                    <div class="contact-links"><a href="https://maps.app.goo.gl/u9xBsvEgXcN1DxLc8?g_st=aw" target="_blank" rel="noopener">Open in Maps</a></div>
+                </div>
+                <div class="contact-item">
+                    <strong>Address:</strong>
+                    <div>Khalna, Hatpara Bazar, Jaypur Roar, Howrah 711413</div>
+                </div>
+                <div class="contact-item">
+                    <strong>Mobile:</strong>
+                    <div><a href="tel:9474862701">9474862701</a></div>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <div><a href="mailto:adritabimakendra@gmail.com">adritabimakendra@gmail.com</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 Adrita Bima Kendra | All Rights Reserved</p>
+    </footer>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

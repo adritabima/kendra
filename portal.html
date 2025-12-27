@@ -115,6 +115,48 @@
             margin: 5px 0;
         }
 
+        /* Business box on right side */
+        .business-link {
+            text-decoration: none;
+        }
+
+        .business-box {
+            position: fixed;
+            top: auto; /* positioned dynamically below the profile box */
+            right: 20px;
+            background-color: #ffffff;
+            color: #222;
+            padding: 12px 14px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 200px;
+            transition: top 0.12s ease, transform 0.12s ease;
+        }
+
+        .business-box img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .business-box p {
+            margin: 0;
+            font-weight: 600;
+            color: #111;
+            font-size: 1rem;
+        }
+
+        .business-box:hover {
+            transform: translateY(-3px);
+            transition: transform 0.15s ease;
+        }
+
         #details-modal {
             display: none;
             position: fixed;
@@ -224,12 +266,18 @@
         <a href="thanks.html">Log Out</a>
     </div>
 
+    <a class="business-link" href="https://docs.google.com/spreadsheets/d/1n9Yksmj8_fAvmtC4OSo6ItaZlvxhEbSyrAeEhym2svU/edit?gid=1927601061#gid=1927601061" target="_blank" rel="noopener noreferrer" title="Open My Business Fugure">
+        <div class="business-box">
+            <img src="1200x630wa (2).png" alt="Business Logo">
+            <p>My Business Fugure</p>
+        </div>
+    </a>
+
     <div class="center-menu">
         <a href="https://licindia.in" class="logo-link"><img src="LIC.png" alt="LIC Logo"></a>
         <a href="https://nicportal.nic.co.in/nicportal/signin/login" class="logo-link"><img src="National.png" alt="National Logo"></a>
         <a href="https://atom.starhealth.in/login" class="logo-link"><img src="Star.jpg" alt="Star Health Logo"></a>
         <a href="https://i-magic.in/" class="logo-link"><img src="i magic.png" alt="I-Magic Logo"></a>
-         <a href="https://docs.google.com/spreadsheets/d/1n9Yksmj8_fAvmtC4OSo6ItaZlvxhEbSyrAeEhym2svU/edit?gid=1927601061#gid=1927601061" class="logo-link"><img src="i magic.png" alt="Google Sheet Logo My Business Figure"></a>
     </div>
 
     <!-- Details modal removed -->
@@ -241,6 +289,24 @@
             if(el) el.style.display = 'none';
         }, 5000);
     </script>
+    <script>
+        // Position the business box directly below the profile box
+        (function(){
+            function updateBusinessPosition(){
+                const profile = document.querySelector('.profile-box');
+                const business = document.querySelector('.business-box');
+                if(!profile || !business) return;
+                const rect = profile.getBoundingClientRect();
+                const gap = 12; // px gap between profile and business box
+                const topPx = Math.max(rect.bottom + gap, 12); // keep at least small margin
+                business.style.top = topPx + 'px';
+            }
+
+            // Update on load, after images settle, and on resize
+            window.addEventListener('load', updateBusinessPosition);
+            window.addEventListener('resize', updateBusinessPosition);
+            setTimeout(updateBusinessPosition, 120);
+        })();
+    </script>
 </body>
 </html>
-

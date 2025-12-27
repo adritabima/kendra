@@ -482,7 +482,6 @@
                     </div>
 
                     <div class="calc-actions">
-                        <button class="btn btn-primary" id="calc-btn">Calculate</button>
                         <button class="btn btn-ghost" id="reset-btn">Reset</button>
                     </div>
                 </div>
@@ -558,7 +557,6 @@
                     const amountLabel = document.getElementById('amount-label');
                     const rateInput = document.getElementById('rate-input');
                     const yearsInput = document.getElementById('years-input');
-                    const calcBtn = document.getElementById('calc-btn');
                     const resetBtn = document.getElementById('reset-btn');
                     const investedVal = document.getElementById('invested-val');
                     const gainVal = document.getElementById('gain-val');
@@ -673,10 +671,32 @@
                     // Event bindings
                     modeSipBtn.addEventListener('click', () => setMode('SIP'));
                     modeLumpBtn.addEventListener('click', () => setMode('LUMPSUM'));
-                    calcBtn.addEventListener('click', calculate);
                     resetBtn.addEventListener('click', () => {
-                        amountInput.value = '1000'; rateInput.value = '12'; yearsInput.value = '10';
-                        setMode('SIP');
+                        // Clear input fields
+                        amountInput.value = '';
+                        rateInput.value = '';
+                        yearsInput.value = '';
+                        // Clear results
+                        investedVal.textContent = fmt(0);
+                        gainVal.textContent = fmt(0);
+                        totalVal.textContent = fmt(0);
+                        document.getElementById('abs-return').textContent = '0.00%';
+                        // Reset chart bars and labels
+                        if(investedBar) investedBar.style.width = '0%';
+                        if(gainBar) gainBar.style.width = '0%';
+                        if(investedLabel) investedLabel.textContent = fmt(0);
+                        if(gainLabel) gainLabel.textContent = fmt(0);
+                        // Reset pie
+                        try {
+                            const r0 = 44;
+                            const C0 = 2 * Math.PI * r0;
+                            if(pieInvest) { pieInvest.style.strokeDasharray = '0 ' + C0; pieInvest.style.strokeDashoffset = 0; }
+                            if(pieGain) { pieGain.style.strokeDasharray = '0 ' + C0; pieGain.style.strokeDashoffset = 0; }
+                            if(pieTotal) pieTotal.textContent = fmt(0);
+                            if(piePerc) piePerc.textContent = '0.00% Return';
+                        } catch(e){}
+                        // Set focus back to amount for convenience
+                        amountInput.focus();
                     });
 
                     // live update on input change

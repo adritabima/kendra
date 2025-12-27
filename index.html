@@ -450,7 +450,7 @@
         <!-- SIIP / Lumpsum Calculator -->
         <section class="calc-section" aria-label="Investment calculator">
             <div class="calc-header">
-                <div class="calc-title">SIP / Lumpsum Calculator <span class="approx-badge">Approximate</span></div>
+                <div class="calc-title">SIIP / Lumpsum Calculator <span class="approx-badge">Approximate</span></div>
                 <div style="font-size:13px;color:#666">Choose mode and enter values to calculate returns</div>
             </div>
 
@@ -459,11 +459,11 @@
                     <!-- Section 1: Mode toggle -->
                     <label>Mode</label>
                     <div class="toggle-wrap" role="tablist" aria-label="Calculator mode">
-                        <button type="button" class="toggle-btn active" id="mode-sip" aria-pressed="true">SIP</button>
+                        <button type="button" class="toggle-btn active" id="mode-siip" aria-pressed="true">SIIP</button>
                         <button type="button" class="toggle-btn" id="mode-lumpsum" aria-pressed="false">Lumpsum</button>
                     </div>
 
-                    <!-- Section 2: Amount (monthly for SIP or lump sum) -->
+                    <!-- Section 2: Amount (monthly for SIIP or lump sum) -->
                     <div style="margin-top:12px;">
                         <label id="amount-label">Monthly Investment (₹)</label>
                         <input type="number" id="amount-input" min="0" step="any" value="1000" aria-labelledby="amount-label">
@@ -549,9 +549,9 @@
 
         <footer>
             <script>
-                // Calculator logic for SIP and Lumpsum
+                // Calculator logic for SIIP and Lumpsum
                 (function(){
-                    const modeSipBtn = document.getElementById('mode-sip');
+                    const modeSiipBtn = document.getElementById('mode-siip');
                     const modeLumpBtn = document.getElementById('mode-lumpsum');
                     const amountInput = document.getElementById('amount-input');
                     const amountLabel = document.getElementById('amount-label');
@@ -570,18 +570,18 @@
                     const pieTotal = document.getElementById('pie-total');
                     const piePerc = document.getElementById('pie-perc');
 
-                    let mode = 'SIP';
+                    let mode = 'SIIP';
 
                     function setMode(m){
                         mode = m;
-                        if(m === 'SIP'){
-                            modeSipBtn.classList.add('active'); modeSipBtn.setAttribute('aria-pressed','true');
+                        if(m === 'SIIP'){
+                            modeSiipBtn.classList.add('active'); modeSiipBtn.setAttribute('aria-pressed','true');
                             modeLumpBtn.classList.remove('active'); modeLumpBtn.setAttribute('aria-pressed','false');
                             amountLabel.textContent = 'Monthly Investment (₹)';
                             amountInput.placeholder = 'Enter monthly amount';
                         } else {
                             modeLumpBtn.classList.add('active'); modeLumpBtn.setAttribute('aria-pressed','true');
-                            modeSipBtn.classList.remove('active'); modeSipBtn.setAttribute('aria-pressed','false');
+                            modeSiipBtn.classList.remove('active'); modeSiipBtn.setAttribute('aria-pressed','false');
                             amountLabel.textContent = 'Lumpsum Investment (₹)';
                             amountInput.placeholder = 'Enter lumpsum amount';
                         }
@@ -598,7 +598,7 @@
                         const rAnnual = parseFloat(rateInput.value) || 0;
                         const years = parseFloat(yearsInput.value) || 0;
 
-                        if(mode === 'SIP'){
+                        if(mode === 'SIIP'){
                             const n = Math.max(0, Math.round(years * 12));
                             const i = rAnnual / 100 / 12; // monthly rate
                             let fv;
@@ -669,7 +669,7 @@
                     }
 
                     // Event bindings
-                    modeSipBtn.addEventListener('click', () => setMode('SIP'));
+                    modeSiipBtn.addEventListener('click', () => setMode('SIIP'));
                     modeLumpBtn.addEventListener('click', () => setMode('LUMPSUM'));
                     resetBtn.addEventListener('click', () => {
                         // Clear input fields
@@ -703,7 +703,7 @@
                     [amountInput, rateInput, yearsInput].forEach(el => el.addEventListener('input', calculate));
 
                     // init
-                    setMode('SIP');
+                    setMode('SIIP');
                     calculate();
                 })();
             </script>

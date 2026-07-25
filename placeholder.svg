@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Adrita Bima Kendra">
+  <rect width="1200" height="800" fill="#edf3ff"/>
+  <circle cx="600" cy="330" r="95" fill="#0B3D91" opacity=".12"/>
+  <path d="M600 255l62 31v67c0 74-62 116-62 116s-62-42-62-116v-67z" fill="#0B3D91"/>
+  <path d="M572 350l20 20 39-48" fill="none" stroke="#D4AF37" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="570" text-anchor="middle" fill="#0B3D91" font-family="Arial, sans-serif" font-size="44" font-weight="700">Adrita Bima Kendra</text>
+</svg>

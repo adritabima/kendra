@@ -1,0 +1,588 @@
+/*==========================================
+ADRITA BIMA KENDRA
+Calculator Page
+===========================================*/
+
+.page-banner{
+    position:relative;
+    height:350px;
+    background:linear-gradient(rgba(6,34,74,.75),rgba(6,34,74,.75)),
+    url("../images/hero/banner.jpg") center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+}
+
+.page-banner h1{
+    font-size:58px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.page-banner p{
+    font-size:20px;
+    opacity:.95;
+}
+
+/*========================*/
+
+.calculator-intro{
+
+    padding:80px 0;
+    text-align:center;
+    background:#fff;
+
+}
+
+.calculator-intro h5{
+
+    color:#D4AF37;
+    letter-spacing:2px;
+    margin-bottom:15px;
+
+}
+
+.calculator-intro h2{
+
+    color:#0B3D91;
+    font-size:42px;
+    margin-bottom:20px;
+
+}
+
+.calculator-intro p{
+
+    max-width:750px;
+    margin:auto;
+    color:#fbf8f8;
+    font-size:18px;
+
+}
+
+/*========================*/
+
+.calculator-grid{
+
+    padding-bottom:90px;
+
+}
+
+.calculator-grid .container{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+
+}
+
+.calc-card{
+
+    background:#fff;
+    border-radius:20px;
+    text-align:center;
+    padding:40px 30px;
+    transition:.35s;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.calc-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.calc-card i{
+
+    font-size:55px;
+    color:#D4AF37;
+    margin-bottom:20px;
+
+}
+
+.calc-card h3{
+
+    color:#0B3D91;
+    margin-bottom:15px;
+
+}
+
+.calc-card p{
+
+    color:#666;
+    margin-bottom:20px;
+
+}
+
+.calc-card a{
+
+    color:#0B3D91;
+    font-weight:600;
+
+}
+
+/*========================*/
+
+.calculator-section{
+
+    background:#f5f7fb;
+    padding:100px 0;
+
+}
+
+.calculator-box{
+
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:50px;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.calculator-left h2{
+
+    color:#0B3D91;
+    margin-bottom:15px;
+
+}
+
+.calculator-left p{
+
+    margin-bottom:30px;
+    color:#666;
+
+}
+
+.calculator-left label{
+
+    display:block;
+    margin-top:20px;
+    margin-bottom:8px;
+    font-weight:600;
+
+}
+
+.calculator-left input{
+
+    width:100%;
+    padding:16px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:16px;
+
+}
+
+.calculator-left input:focus{
+
+    border-color:#0B3D91;
+    outline:none;
+
+}
+
+.calculator-left button{
+
+    margin-top:30px;
+    width:100%;
+    padding:18px;
+    background:#0B3D91;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.35s;
+
+}
+
+.calculator-left button:hover{
+
+    background:#D4AF37;
+
+}
+
+.calculator-right{
+
+    background:linear-gradient(135deg,#0B3D91,#06224a);
+
+    border-radius:20px;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.calculator-right h3{
+
+    margin-bottom:20px;
+
+}
+
+.result-box{
+
+    width:100%;
+
+}
+
+.result-box h1{
+
+    font-size:52px;
+    color:#D4AF37;
+
+}
+
+.result-box p{
+
+    margin-top:10px;
+    font-size:18px;
+
+}
+
+/*========================*/
+
+.active{
+
+    color:#D4AF37 !important;
+
+}
+
+/*========================*/
+
+@media(max-width:992px){
+
+.calculator-box{
+
+grid-template-columns:1fr;
+
+}
+
+.page-banner h1{
+
+font-size:42px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.page-banner{
+
+height:260px;
+
+}
+
+.page-banner h1{
+
+font-size:34px;
+
+}
+
+.page-banner p{
+
+font-size:16px;
+
+}
+
+.calculator-box{
+
+padding:25px;
+
+}
+
+}
+.summary{
+
+margin-top:30px;
+
+text-align:left;
+
+}
+
+.summary p{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:18px;
+
+font-size:17px;
+
+}
+
+.summary span{
+
+font-weight:700;
+
+color:#D4AF37;
+
+}
+
+.result-box hr{
+
+margin:25px 0;
+
+border:none;
+
+border-top:1px solid rgba(255,255,255,.25);
+
+}
+.result-box{
+
+text-align:center;
+
+}
+
+.result-box canvas{
+
+max-width:260px;
+
+margin:20px auto;
+
+display:block;
+
+}
+
+.summary{
+
+margin-top:30px;
+
+}
+
+.summary p{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:15px;
+
+font-size:17px;
+
+padding:10px 0;
+
+border-bottom:1px solid rgba(255,255,255,.2);
+
+}
+
+.summary span{
+
+font-weight:700;
+
+color:#FFD700;
+
+}
+/*=============================
+CALCULATOR LAYOUT
+==============================*/
+
+.calculator-layout{
+
+    padding:60px 0 100px;
+
+    background:#f5f7fb;
+
+}
+
+.calculator-wrapper{
+
+    display:grid;
+
+    grid-template-columns:280px 1fr;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+.calculator-sidebar{
+
+    position:sticky;
+
+    top:110px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.calculator-sidebar h3{
+
+    color:#0B3D91;
+
+    margin-bottom:20px;
+
+}
+
+.calculator-sidebar ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.calculator-sidebar li{
+
+    margin-bottom:12px;
+
+}
+
+.calculator-sidebar a{
+
+    display:block;
+
+    padding:14px 16px;
+
+    border-radius:10px;
+
+    color:#333;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.calculator-sidebar a i{
+
+    width:24px;
+
+    color:#0B3D91;
+
+}
+
+.calculator-sidebar a:hover{
+
+    background:#0B3D91;
+
+    color:#fff;
+
+}
+
+.calculator-sidebar a:hover i{
+
+    color:#FFD700;
+
+}
+
+.calculator-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:50px;
+
+}
+
+@media(max-width:992px){
+
+    .calculator-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .calculator-sidebar{
+
+        position:relative;
+
+        top:0;
+
+    }
+
+}
+// ==========================
+// LUMPSUM
+// ==========================
+
+let lumpChart;
+
+document.getElementById("calculateLumpsum").onclick=function(){
+
+const P=Number(document.getElementById("lumpAmount").value);
+
+const R=Number(document.getElementById("lumpRate").value)/100;
+
+const Y=Number(document.getElementById("lumpYear").value);
+
+const FV=P*Math.pow((1+R),Y);
+
+const Gain=FV-P;
+
+document.getElementById("lumpInvestment").innerHTML="₹ "+P.toLocaleString("en-IN");
+
+document.getElementById("lumpGain").innerHTML="₹ "+Gain.toLocaleString("en-IN",{maximumFractionDigits:0});
+
+document.getElementById("lumpResult").innerHTML="₹ "+FV.toLocaleString("en-IN",{maximumFractionDigits:0});
+
+}
+
+// ==========================
+// RETIREMENT
+// ==========================
+
+document.getElementById("calculateRetirement").onclick=function(){
+
+const age=Number(document.getElementById("currentAge").value);
+
+const retire=Number(document.getElementById("retireAge").value);
+
+const sip=Number(document.getElementById("retireSip").value);
+
+const rate=Number(document.getElementById("retireRate").value)/12/100;
+
+const months=(retire-age)*12;
+
+const corpus=sip*((Math.pow(1+rate,months)-1)/rate)*(1+rate);
+
+document.getElementById("retireResult").innerHTML="₹ "+corpus.toLocaleString("en-IN",{maximumFractionDigits:0});
+
+}
+
+// ==========================
+// GOAL PLANNER
+// ==========================
+
+document.getElementById("calculateGoal").onclick=function(){
+
+const goal=Number(document.getElementById("goalAmount").value);
+
+const years=Number(document.getElementById("goalYear").value);
+
+const rate=Number(document.getElementById("goalRate").value)/12/100;
+
+const months=years*12;
+
+const sip=goal/(((Math.pow(1+rate,months)-1)/rate)*(1+rate));
+
+document.getElementById("goalResult").innerHTML="₹ "+sip.toLocaleString("en-IN",{maximumFractionDigits:0});
+
+}

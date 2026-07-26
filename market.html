@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Live Market Dashboard | Adrita Bima Kendra</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="animation.css">
+<link rel="stylesheet" href="market.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--======================
+TOP HEADER
+=======================-->
+
+<div class="top-bar">
+
+<div class="container">
+
+<div>
+
+📞 +91 9474862701
+
+</div>
+
+<div>
+
+✉️ adritabimakendra@gmail.com
+
+</div>
+
+</div>
+
+</div>
+
+<!--======================
+NAVBAR
+=======================-->
+
+<header>
+
+<div class="container nav">
+
+<div class="logo">
+
+<img class="brand-logo" src="Adrita Bima Logo.jpeg" alt="Adrita Bima Kendra logo">
+
+<h2>ADRITA BIMA KENDRA</h2>
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="services.html">Services</a></li>
+
+<li><a href="market.html">Market</a></li>
+
+<li><a href="calculator.html">Calculator</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li><a href="login.html">Login</a></li>
+
+
+</ul>
+
+</div>
+
+</header>
+<!--=========================
+LIVE MARKET TICKER
+==========================-->
+
+<div class="ticker-container">
+
+<div class="ticker-title">
+
+<i class="fas fa-chart-line"></i>
+
+LIVE MARKET
+
+</div>
+
+<div class="ticker-wrap">
+
+<div class="tradingview-widget-container">
+
+<div class="tradingview-widget-container__widget"></div>
+
+<script type="text/javascript"
+src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+async>
+({
+  "symbols": [
+    { "proName": "INDEX:NSEI", "title": "NIFTY 50" },
+    { "proName": "INDEX:BSESN", "title": "SENSEX" },
+    { "proName": "INDEX:NSEBANK", "title": "BANK NIFTY" },
+    { "proName": "FX_IDC:USDINR", "title": "USD/INR" },
+    { "proName": "TVC:GOLD", "title": "GOLD" },
+    { "proName": "TVC:SILVER", "title": "SILVER" },
+    { "proName": "TVC:USOIL", "title": "CRUDE OIL" },
+    { "proName": "BTCUSD", "title": "BITCOIN" }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "en"
+})
+</script>
+
+</div>
+
+</div>
+
+</div>
+
+<!--======================
+HERO
+=======================-->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+
+Indian Stock Market Dashboard
+
+</h1>
+
+<p>
+
+Live Market • NIFTY • SENSEX • Commodities • Forex • Charts
+
+</p>
+
+</div>
+
+</section>
+<section class="status-section">
+
+<div class="container">
+
+<div class="status-grid">
+
+<div class="status-card">
+
+<h4>Market Status</h4>
+
+<h2 id="market-status-value" class="green">OPEN</h2>
+
+<p id="market-status-caption">09:15 AM - 03:30 PM</p>
+
+</div>
+
+<div class="status-card">
+
+<h4>Market Cap</h4>
+
+<h2 data-market-key="marketcap">₹--</h2>
+
+<p>Indian Equity Market</p>
+
+</div>
+
+<div class="status-card">
+
+<h4>India VIX</h4>
+
+<h2 data-market-key="vix">--</h2>
+
+<p class="red" data-market-key="vix-change">--</p>
+
+</div>
+
+<div class="status-card">
+
+<h4>Advance / Decline</h4>
+
+<h2 data-market-key="breadth">--</h2>
+
+<p class="green" data-market-key="breadth-status">Positive Breadth</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--======================
+MARKET OVERVIEW
+=======================-->
+
+<section class="market-widget">
+
+<div class="container">
+
+<h2>
+
+Live Market Overview
+
+</h2>
+
+<p class="live-feed-note">Live prices refresh automatically from TradingView.</p>
+
+<div class="tradingview-widget-container live-market-tape">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+    "symbols": [
+      {"proName":"BSE:SENSEX","title":"SENSEX"},
+      {"proName":"NSE:NIFTY","title":"NIFTY 50"},
+      {"proName":"NSE:BANKNIFTY","title":"NIFTY BANK"},
+      {"proName":"NSE:CNXSMALLCAP","title":"NIFTY SMALLCAP"},
+      {"proName":"TVC:GOLD","title":"GOLD"},
+      {"proName":"TVC:SILVER","title":"SILVER"},
+      {"proName":"TVC:USOIL","title":"CRUDE OIL"},
+      {"proName":"TVC:NATGAS","title":"NATURAL GAS"},
+      {"proName":"NSE:LICI","title":"LIC"}
+    ],
+    "showSymbolLogo": true,
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+  </script>
+</div>
+
+<div class="tradingview-widget-container">
+
+<div class="tradingview-widget-container__widget"></div>
+
+<script
+type="text/javascript"
+src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
+async>
+
+({
+"colorTheme":"dark",
+"dateRange":"12M",
+"showChart":true,
+"locale":"en",
+"width":"100%",
+"height":"600",
+"isTransparent":false,
+"showSymbolLogo":true,
+"tabs":[
+
+{
+
+"title":"Indian Market",
+
+"symbols":[
+
+{"s":"NSE:NIFTY","d":"NIFTY 50"},
+
+{"s":"BSE:SENSEX","d":"SENSEX"},
+
+{"s":"NSE:BANKNIFTY","d":"BANK NIFTY"},
+
+{"s":"NSE:NIFTY100","d":"NIFTY 100"},
+
+{"s":"NSE:NIFTY500","d":"NIFTY 500"},
+
+{"s":"NSE:CNXSMALLCAP","d":"NIFTY SMALLCAP"},
+
+{"s":"NSE:CNXMIDCAP","d":"NIFTY MIDCAP"},
+
+{"s":"NSE:CNXIT","d":"NIFTY IT"},
+
+{"s":"NSE:CNXBANK","d":"NIFTY BANK"},
+
+{"s":"NSE:CNXFMCG","d":"NIFTY FMCG"},
+
+{"s":"NSE:CNXAUTO","d":"NIFTY AUTO"},
+
+{"s":"NSE:CNXPHARMA","d":"NIFTY PHARMA"},
+
+{"s":"NSE:CNXREALTY","d":"NIFTY REALTY"}
+
+]
+
+},
+
+{
+
+"title":"Forex",
+
+"symbols":[
+
+{"s":"FX_IDC:USDINR"},
+
+{"s":"FX_IDC:EURINR"},
+
+{"s":"FX_IDC:GBPINR"}
+
+]
+
+},
+
+{
+
+"title":"Commodities",
+
+"symbols":[
+
+{"s":"TVC:GOLD"},
+
+{"s":"TVC:SILVER"},
+
+{"s":"TVC:USOIL"}
+
+]
+
+}
+
+]
+
+})
+
+</script>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="market-movers">
+
+<div class="container">
+
+<div class="movers-grid">
+
+<div class="mover-box">
+
+<h2>🟢 Top Gainers</h2>
+
+<ul>
+
+<li>RELIANCE <span class="green">+2.35%</span></li>
+
+<li>TCS <span class="green">+1.98%</span></li>
+
+<li>ICICI BANK <span class="green">+1.55%</span></li>
+
+<li>SBIN <span class="green">+1.42%</span></li>
+
+<li>LT <span class="green">+1.24%</span></li>
+
+</ul>
+
+</div>
+
+<div class="mover-box">
+
+<h2>🔴 Top Losers</h2>
+
+<ul>
+
+<li>ITC <span class="red">-1.15%</span></li>
+
+<li>HINDALCO <span class="red">-0.98%</span></li>
+
+<li>BAJAJ AUTO <span class="red">-0.92%</span></li>
+
+<li>SUNPHARMA <span class="red">-0.88%</span></li>
+
+<li>NESTLE <span class="red">-0.76%</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================================================== -->
+<!-- MARKET HEATMAP -->
+<!-- ===================================================== -->
+<section class="heatmap-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Market Heatmap</h2>
+
+            <p>
+                Live Performance of Major Indian Stocks
+            </p>
+
+        </div>
+
+        <div class="widget-card">
+
+            <div class="tradingview-widget-container">
+
+                <div class="tradingview-widget-container__widget"></div>
+
+                <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js"
+                async>
+({
+  "exchanges":["NSE"],
+  "dataSource":"NSE",
+  "grouping":"sector",
+  "blockSize":"market_cap_basic",
+  "blockColor":"change",
+  "locale":"en",
+  "symbolUrl":"",
+  "colorTheme":"dark",
+  "hasTopBar":true,
+  "isDataSetEnabled":true,
+  "isZoomEnabled":true,
+  "hasSymbolTooltip":true,
+  "width":"100%",
+  "height":"650"
+})
+                </script>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--======================
+ADVANCED CHART
+=======================-->
+
+<section class="market-widget">
+
+<div class="container">
+
+<h2>
+
+Live Interactive Chart
+
+</h2>
+
+<div class="chart-controls">
+
+<input type="text" id="stockSymbolInput" placeholder="Enter any symbol, e.g. RELIANCE, AAPL, TSLA" />
+
+<button type="button" id="loadChartBtn">Load Chart</button>
+
+</div>
+
+<p class="chart-hint">Type any supported stock symbol and the chart will switch to that instrument.</p>
+
+<div class="tradingview-widget-container">
+
+<div id="tradingview_chart"></div>
+
+<script
+type="text/javascript"
+src="https://s3.tradingview.com/tv.js"></script>
+
+<script>
+let tvWidget = null;
+
+function normalizeSymbol(value) {
+  const trimmed = (value || '').trim();
+  if (!trimmed) return 'NSE:NIFTY';
+  if (trimmed.includes(':')) return trimmed.toUpperCase();
+  if (/^[A-Z0-9.\-]+$/.test(trimmed.toUpperCase())) {
+    return 'NSE:' + trimmed.toUpperCase();
+  }
+  return trimmed;
+}
+
+function createChart(symbol) {
+  const normalizedSymbol = normalizeSymbol(symbol);
+
+  if (tvWidget && typeof tvWidget.setSymbol === 'function') {
+    tvWidget.setSymbol(normalizedSymbol, '15');
+    return;
+  }
+
+  tvWidget = new TradingView.widget({
+    "container_id":"tradingview_chart",
+    "width":"100%",
+    "height":650,
+    "symbol":normalizedSymbol,
+    "interval":"15",
+    "timezone":"Asia/Kolkata",
+    "theme":"dark",
+    "style":"1",
+    "locale":"en",
+    "toolbar_bg":"#111827",
+    "allow_symbol_change":true,
+    "details":true,
+    "withdateranges":true,
+    "hide_side_toolbar":false,
+    "save_image":true,
+    "studies_overrides": {}
+  });
+}
+
+function loadSelectedSymbol() {
+  const input = document.getElementById('stockSymbolInput');
+  const value = input ? input.value : '';
+  createChart(value);
+}
+
+document.getElementById('loadChartBtn').addEventListener('click', loadSelectedSymbol);
+document.getElementById('stockSymbolInput').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    loadSelectedSymbol();
+  }
+});
+
+createChart('NSE:NIFTY');
+
+</script>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+    <section class="watchlist">
+
+<div class="container">
+
+<h2>⭐ My Watchlist</h2>
+
+<div class="watch-grid">
+
+<div class="watch-stock">RELIANCE</div>
+
+<div class="watch-stock">TCS</div>
+
+<div class="watch-stock">INFY</div>
+
+<div class="watch-stock">HDFC BANK</div>
+
+<div class="watch-stock">ICICI BANK</div>
+
+<div class="watch-stock">SBIN</div>
+
+<div class="watch-stock">LT</div>
+
+<div class="watch-stock">HAL</div>
+
+</div>
+
+</div>
+
+</section>
+
+<p>
+
+© 2026 Adrita Bima Kendra | All Rights Reserved
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* Legacy Python loader retained as inactive reference; live data is supplied by TradingView above.
+async function loadPythonMarketData() {
+  try {
+    const response = await fetch('/api/market');
+    if (!response.ok) return;
+    const data = await response.json();
+    Object.entries(data).forEach(([key, value]) => {
+      const elements = document.querySelectorAll(`[data-market-key="${key}"]`);
+      if (!elements.length) return;
+      const price = value?.price;
+      if (price == null) return;
+      const change = value?.change || 0;
+      const percent = value?.percent || 0;
+      const trend = change >= 0 ? '▲' : '▼';
+      const color = change >= 0 ? 'green' : 'red';
+      elements.forEach((element) => {
+        element.innerHTML = `${price.toLocaleString('en-IN', { maximumFractionDigits: 2 })} <span class="${color}">${trend} ${percent.toFixed(2)}%</span>`;
+      });
+    });
+  } catch (error) {
+    console.error('Market API error', error);
+  }
+}
+
+*/
+</script>
+
+</body>
+
+</html>

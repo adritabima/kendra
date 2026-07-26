@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request secure client portal access from Adrita Bima Kendra.">
+  <title>Client Login | Adrita Bima Kendra</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-shell" aria-labelledby="loginTitle">
+      <div class="login-intro">
+        <div class="login-badge"><i class="fa-solid fa-shield-halved"></i></div>
+        <p class="login-eyebrow">ADRITA BIMA KENDRA</p>
+        <h1 id="loginTitle">Client Portal Access</h1>
+        <p>Manage your service requests and stay connected with our team through a secure client portal.</p>
+        <ul class="login-benefits">
+          <li><i class="fa-solid fa-circle-check"></i> Simple access request</li>
+          <li><i class="fa-solid fa-circle-check"></i> Personal support on WhatsApp</li>
+          <li><i class="fa-solid fa-circle-check"></i> Trusted financial assistance</li>
+        </ul>
+      </div>
+
+      <div class="login-card">
+        <h2>Request Your Access</h2>
+        <p>Enter your details and we will help you with portal access.</p>
+        <form id="loginAccessForm" novalidate>
+          <label for="loginName">Full Name</label>
+          <input id="loginName" name="name" type="text" placeholder="Your full name" required>
+
+          <label for="loginEmail">Email Address</label>
+          <input id="loginEmail" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="loginPhone">Mobile Number</label>
+          <input id="loginPhone" name="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" required>
+
+          <p id="loginFormMessage" class="form-validation-message" aria-live="polite"></p>
+          <button type="submit" class="login-submit"><i class="fa-brands fa-whatsapp"></i> Request on WhatsApp</button>
+        </form>
+        <p class="login-help">Need immediate help? <a href="tel:+919474862701">Call +91 9474862701</a></p>
+        <a class="login-home-link" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

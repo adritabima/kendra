@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visiting Card | Subhadip Ghosh</title>
+    <style>
+      :root {
+        --bg-1: #0f172a;
+        --bg-2: #111827;
+        --card-1: rgba(15, 23, 42, 0.8);
+        --card-2: rgba(30, 41, 59, 0.9);
+        --primary: #f59e0b;
+        --primary-2: #f97316;
+        --text: #e5e7eb;
+        --muted: #cbd5e1;
+        --line: rgba(255, 255, 255, 0.12);
+        --shadow: rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(249, 115, 22, 0.32), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.18), transparent 25%),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        color: var(--text);
+      }
+
+      .card {
+        width: min(92vw, 760px);
+        min-height: 420px;
+        padding: 28px;
+        border-radius: 26px;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(17, 24, 39, 0.96));
+        border: 1px solid var(--line);
+        box-shadow: 0 30px 60px var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before,
+      .card::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(20px);
+        opacity: 0.42;
+      }
+
+      .card::before {
+        width: 220px;
+        height: 220px;
+        background: rgba(249, 115, 22, 0.25);
+        right: -60px;
+        top: -60px;
+      }
+
+      .card::after {
+        width: 180px;
+        height: 180px;
+        background: rgba(245, 158, 11, 0.22);
+        left: -40px;
+        bottom: -55px;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        box-shadow: 0 18px 32px rgba(249, 115, 22, 0.35);
+        border: 5px solid rgba(255,255,255,0.1);
+        font-size: 52px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .chip {
+        background: rgba(245, 158, 11, 0.12);
+        border: 1px solid rgba(245, 158, 11, 0.34);
+        color: #fbbf24;
+        padding: 8px 14px;
+        border-radius: 999px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .role {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 1.02rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .divider {
+        width: 80px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      }
+
+      .info {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 18px;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 42px;
+        padding: 10px 12px;
+        background: rgba(148, 163, 184, 0.04);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        display: grid;
+        place-items: center;
+        background: rgba(249, 115, 22, 0.14);
+        color: #fdba74;
+        font-weight: 700;
+        font-size: 0.82rem;
+      }
+
+      .item strong {
+        display: block;
+        font-size: 0.72rem;
+        color: #f8fafc;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+
+      .item span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 6px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .btn.primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: #fff;
+        border-color: transparent;
+        box-shadow: 0 14px 22px rgba(249, 115, 22, 0.24);
+      }
+
+      .btn.secondary {
+        color: var(--text);
+        background: rgba(255,255,255,0.02);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 640px) {
+        .card {
+          padding: 22px 18px;
+        }
+
+        .content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .info {
+          grid-template-columns: 1fr;
+        }
+
+        .actions {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="content">
+        <div class="profile">
+          <div class="avatar">SG</div>
+          <div class="chip">Available</div>
+        </div>
+
+        <div class="details">
+          <div>
+            <h1>Subhadip Ghosh</h1>
+            <div class="role">Business Consultant</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="info">
+            <div class="item">
+              <div class="icon">☎</div>
+              <div>
+                <strong>Phone</strong>
+                <span>+91 98765 43210</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="icon">✉</div>
+              <div>
+                <strong>Email</strong>
+                <span>subhadip@example.com</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="icon">🌐</div>
+              <div>
+                <strong>Website</strong>
+                <span>www.subhadipghosh.com</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="icon">📍</div>
+              <div>
+                <strong>Address</strong>
+                <span>New Town, Kolkata</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="tel:+919876543210">Call Me</a>
+            <a class="btn secondary" href="mailto:subhadip@example.com">Email Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

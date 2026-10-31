@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure employee work dashboard for Adrita Bima Kendra.">
+  <title>Work Dashboard | Adrita Bima Kendra</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="employee-dashboard-page">
+  <header class="employee-dashboard-header">
+    <a class="employee-dashboard-brand" href="index.html"><img src="Adrita Bima Logo.jpeg" alt="Adrita Bima Kendra logo"><strong><span>ADRITA</span> BIMA KENDRA</strong></a>
+    <div class="employee-dashboard-actions"><span class="employee-profile"><i class="fa-solid fa-circle-user"></i> <b id="employeeName">Employee</b></span><button id="logoutButton" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button></div>
+  </header>
+  <main class="employee-dashboard-main">
+    <section class="employee-dashboard-hero">
+      <div><p class="employee-kicker">EMPLOYEE WORKSPACE</p><h1>Good day, <span id="employeeGreeting">Employee</span></h1><p>Manage your day, prepare client illustrations and access Adrita Bima Kendra resources from one secure place.</p></div>
+      <div class="employee-date-card"><i class="fa-regular fa-calendar-days"></i><span id="todayDate"></span><small>Secure employee access</small></div>
+    </section>
+
+    <section class="employee-overview" aria-label="Today's overview">
+      <article><i class="fa-solid fa-people-group"></i><div><strong>Client Support</strong><span>Open enquiry tools</span></div></article>
+      <article><i class="fa-solid fa-calculator"></i><div><strong>Plan Illustrations</strong><span>Investment &amp; loan tools</span></div></article>
+      <article><i class="fa-solid fa-chart-line"></i><div><strong>Market Watch</strong><span>Latest market overview</span></div></article>
+      <article><i class="fa-solid fa-shield-halved"></i><div><strong>Protected</strong><span>Employee session active</span></div></article>
+    </section>
+
+    <section class="employee-work-grid">
+      <div class="employee-panel employee-tools-panel"><div class="employee-panel-heading"><div><p class="employee-kicker">QUICK ACCESS</p><h2>Your work tools</h2></div></div><div class="employee-tool-grid">
+        <a href="contact.html"><i class="fa-solid fa-user-group"></i><span><b>Client Enquiries</b><small>Contacts &amp; consultations</small></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="calculator.html"><i class="fa-solid fa-calculator"></i><span><b>Financial Calculators</b><small>SIP, EMI, FD &amp; more</small></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="market.html"><i class="fa-solid fa-chart-line"></i><span><b>Market Monitor</b><small>Market information</small></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="investment.html"><i class="fa-solid fa-piggy-bank"></i><span><b>Investment Plans</b><small>LIC, MF, NPS &amp; FD</small></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="services.html"><i class="fa-solid fa-briefcase"></i><span><b>Service Library</b><small>Insurance &amp; tax services</small></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="faq.html"><i class="fa-solid fa-circle-question"></i><span><b>Knowledge Centre</b><small>Client-ready answers</small></span><i class="fa-solid fa-arrow-right"></i></a>
+      </div></div>
+      <aside class="employee-panel employee-task-panel"><div class="employee-panel-heading"><div><p class="employee-kicker">MY DAY</p><h2>Today’s checklist</h2></div><span id="taskProgress">0/3</span></div><label class="employee-task"><input type="checkbox" data-task="client-followups"><span>Review client follow-ups</span></label><label class="employee-task"><input type="checkbox" data-task="market-review"><span>Review market overview</span></label><label class="employee-task"><input type="checkbox" data-task="plan-preparation"><span>Prepare plan illustrations</span></label><div class="employee-task-progress"><span id="taskProgressBar"></span></div><p class="employee-task-note"><i class="fa-solid fa-circle-info"></i> Your checklist is saved on this device.</p></aside>
+    </section>
+
+    <section class="employee-help-banner"><div><i class="fa-solid fa-headset"></i><div><h2>Need help with a client case?</h2><p>Contact the office support team for prompt assistance.</p></div></div><div><a href="tel:+919474862701"><i class="fa-solid fa-phone"></i> Call Office</a><a href="https://wa.me/919474862701?text=Hello%20Adrita%20Bima%20Kendra%2C%20I%20need%20employee%20support." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></div></section>
+  </main>
+  <script src="employee-dashboard.js"></script>
+</body>
+</html>

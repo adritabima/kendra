@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Financial Calculators | Adrita Bima Kendra</title>
+
+<meta name="description"
+content="Free Financial Calculators - SIP, EMI, Lumpsum, Retirement, Income Tax, GST and Goal Planning.">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="calculator.css">
+<link rel="stylesheet" href="animation.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body class="calculator-page">
+
+<!--==========================
+TOP HEADER
+===========================-->
+
+<div class="top-header">
+
+<div class="container">
+
+<div class="top-left">
+
+<span><i class="fa-solid fa-phone"></i> +91 9474862701</span>
+
+<span><i class="fa-solid fa-envelope"></i>
+adritabimakendra@gmail.com</span>
+
+</div>
+
+<div class="top-right">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+<!--==========================
+NAVBAR
+===========================-->
+
+<header>
+
+<nav class="navbar">
+
+<div class="container">
+
+<a class="logo" href="index.html" aria-label="Adrita Bima Kendra home">
+
+<img class="brand-logo" src="Adrita Bima Logo.jpeg" alt="Adrita Bima Kendra logo">
+
+<h2><span>ADRITA</span> BIMA KENDRA</h2>
+
+</a>
+
+<ul class="menu">
+
+<li><a href="index.html" data-i18n="nav.home">Home</a></li>
+<li><a href="about.html" data-i18n="nav.about">About</a></li>
+<li><a href="services.html" data-i18n="nav.services">Services</a></li>
+<li><a href="market.html" data-i18n="nav.market">Market</a></li>
+<li><a href="calculator.html" class="active" data-i18n="nav.calculator">Calculator</a></li>
+<li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+<li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+
+<li><a href="login.html" data-i18n="nav.login">Login</a></li>
+<li class="lang-item"><select class="site-language-select" aria-label="Choose language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="bn">বাংলা</option></select></li>
+
+</ul>
+
+<a href="https://wa.me/919474862701?text=Hello%20Adrita%20Bima%20Kendra%2C%20I%20would%20like%20help%20with%20financial%20planning." class="appointment-btn" target="_blank" rel="noopener noreferrer">
+
+Book Appointment
+
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<!--==========================
+PAGE HERO
+===========================-->
+
+<section class="page-banner calculator-hero">
+  <div class="hero-motion" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="overlay"></div>
+  <div class="home-premium-effects calculator-premium-effects" aria-hidden="true"><span class="home-orbit-ring"></span><span class="home-particle home-particle-one"></span><span class="home-particle home-particle-two"></span><span class="home-particle home-particle-three"></span><span class="home-orbit-icon home-icon-chart"><i class="fa-solid fa-calculator"></i></span><span class="home-orbit-icon home-icon-coins"><i class="fa-solid fa-chart-line"></i></span></div>
+  <div class="calculator-hero-visual" aria-hidden="true">
+    <span class="calculator-visual-coin coin-a"><i class="fa-solid fa-indian-rupee-sign"></i></span><span class="calculator-visual-coin coin-b"><i class="fa-solid fa-chart-line"></i></span>
+    <div class="calculator-device">
+      <div class="calculator-display"><span>FUTURE VALUE</span><strong>₹ <em>12,45,680</em></strong></div>
+      <div class="calculator-keys"><span>7</span><span>8</span><span>9</span><span>+</span><span>4</span><span>5</span><span>6</span><span>−</span><span>1</span><span>2</span><span>3</span><span>×</span><span>0</span><span>.</span><span class="calculator-equals">=</span></div>
+    </div>
+  </div>
+    <div class="container calculator-hero-content">
+    <h5>PLAN • CALCULATE • GROW</h5>
+    <h1>Financial Calculators</h1>
+    <p>Use clear, growth-based estimates for savings, investments, loans and life goals.</p>
+    <a href="#sip" class="btn-primary">Start Calculating</a>
+  </div>
+</section>
+
+<!--==========================
+INTRO
+===========================-->
+
+<section class="calculator-intro">
+
+<div class="container">
+
+<h5>TOOLS</h5>
+
+<h2>Professional Financial Calculators</h2>
+
+<p>
+
+Calculate your future investments, insurance needs,
+tax savings and retirement corpus instantly.
+
+</p>
+
+<p class="calculator-method-note"><i class="fa-solid fa-circle-info"></i> Investment and goal tools use compound-growth estimates. The original amount, total contribution and estimated growth are shown separately wherever applicable.</p>
+
+</div>
+
+</section>
+
+<!--==========================
+CALCULATOR MENU
+===========================-->
+
+<section class="calculator-layout">
+
+    <div class="container calculator-wrapper">
+
+        <!-- Main Content -->
+
+        <main class="calculator-content">
+
+            <section id="sip" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>SIP Calculator</h2>
+
+<p>
+
+Estimate your future wealth by investing monthly.
+
+</p>
+
+<label>Monthly Investment (₹)</label>
+
+<input
+type="number"
+id="sipAmount"
+placeholder="5000">
+
+<label>Expected Return (%)</label>
+
+<input
+type="number"
+id="sipRate"
+placeholder="12">
+
+<label>Investment Period (Years)</label>
+
+<input
+type="number"
+id="sipYear"
+placeholder="20">
+
+<label>Annual SIP Increase (%) <small>Optional</small></label>
+<input type="number" id="sipStepUp" placeholder="10" min="0" max="100" step="0.1">
+
+<button id="calculateSip">
+
+Calculate SIP
+
+</button>
+
+</div>
+
+<div class="result-box">
+
+    <h3>Investment Summary</h3>
+
+    <canvas id="sipChart"></canvas>
+
+    <div class="summary">
+
+        <p>
+            Monthly Investment
+            <span id="investAmount">₹ 0</span>
+        </p>
+
+        <p>
+            Total Investment
+            <span id="totalInvest">₹ 0</span>
+        </p>
+
+        <p>
+            Estimated Returns
+            <span id="wealthGain">₹ 0</span>
+        </p>
+
+        <p>
+            Future Value
+            <span id="sipResult">₹ 0</span>
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+        </main>
+
+    </div>
+
+</section>
+
+<!--==========================
+SIP CALCULATOR
+===========================-->
+<!-- ========================================= -->
+<!-- EMI CALCULATOR -->
+<!-- ========================================= -->
+
+<section id="emi" class="calculator-section">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <!-- Left -->
+
+            <div class="calculator-left">
+
+                <h2>EMI Calculator</h2>
+
+                <p>
+                    Calculate your monthly EMI for Home, Personal or Business Loans.
+                </p>
+
+                <label>Loan Amount (₹)</label>
+                <input type="number" id="loanAmount" placeholder="1000000">
+
+                <label>Interest Rate (% per year)</label>
+                <input type="number" id="loanRate" placeholder="8.5">
+
+                <label>Loan Tenure (Years)</label>
+                <input type="number" id="loanYear" placeholder="20">
+
+                <button id="calculateEMI">
+
+                    Calculate EMI
+
+                </button>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="calculator-right">
+
+                <div class="result-box">
+
+                    <h3>Loan Summary</h3>
+
+                    <canvas id="emiChart"></canvas>
+
+                    <div class="summary">
+
+                        <p>
+
+                            Monthly EMI
+
+                            <span id="emiResult">
+
+                                ₹ 0
+
+                            </span>
+
+                        </p>
+
+                        <p>
+
+                            Principal Amount
+
+                            <span id="principalAmount">
+
+                                ₹ 0
+
+                            </span>
+
+                        </p>
+
+                        <p>
+
+                            Total Interest
+
+                            <span id="interestAmount">
+
+                                ₹ 0
+
+                            </span>
+
+                        </p>
+
+                        <p>
+
+                            Total Payment
+
+                            <span id="totalPayment">
+
+                                ₹ 0
+
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- LUMPSUM CALCULATOR -->
+<!-- ========================================= -->
+
+<section id="lumpsum" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>Lumpsum Calculator</h2>
+
+<p>Estimate the future value of your one-time investment.</p>
+
+<label>Investment Amount (₹)</label>
+<input type="number" id="lumpAmount" placeholder="100000">
+
+<label>Expected Return (%)</label>
+<input type="number" id="lumpRate" placeholder="12">
+
+<label>Investment Period (Years)</label>
+<input type="number" id="lumpYear" placeholder="15">
+
+<button id="calculateLumpsum">
+Calculate Investment
+</button>
+
+</div>
+
+<div class="calculator-right">
+
+<div class="result-box">
+
+<h3>Investment Summary</h3>
+
+<canvas id="lumpChart"></canvas>
+
+<div class="summary">
+
+<p>Investment
+<span id="lumpInvestment">₹0</span></p>
+
+<p>Estimated Gain
+<span id="lumpGain">₹0</span></p>
+
+<p>Total Value
+<span id="lumpResult">₹0</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="retirement" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>Retirement Planner</h2>
+
+<label>Current Age</label>
+<input type="number" id="currentAge">
+
+<label>Retirement Age</label>
+<input type="number" id="retireAge">
+
+<label>Monthly Saving (₹)</label>
+<input type="number" id="retireSip">
+
+<label>Expected Return (%)</label>
+<input type="number" id="retireRate">
+
+<label>Annual Saving Increase (%) <small>Optional</small></label>
+<input type="number" id="retireStepUp" placeholder="10" min="0" max="100" step="0.1">
+
+<button id="calculateRetirement">
+
+Calculate
+
+</button>
+
+</div>
+
+<div class="calculator-right">
+
+<div class="result-box">
+
+<h3>Estimated Retirement Corpus</h3>
+
+<h1 id="retireResult">
+
+₹0
+
+</h1>
+
+<div class="summary compact-summary">
+<p>Original Monthly Saving <span id="retireOriginalSaving">₹ 0</span></p>
+<p>Total Contribution <span id="retireInvestment">₹ 0</span></p>
+<p>Estimated Growth <span id="retireGain">₹ 0</span></p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="goal" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>Goal Planner</h2>
+
+<label>Today's Target Amount (₹)</label>
+<input type="number" id="goalAmount" placeholder="1000000">
+
+<label>Years</label>
+<input type="number" id="goalYear">
+
+<label>Expected Return (%)</label>
+<input type="number" id="goalRate">
+
+<label>Expected Inflation (%) <small>Optional</small></label>
+<input type="number" id="goalInflation" placeholder="6" min="0" max="100" step="0.1">
+
+<button id="calculateGoal">
+
+Calculate
+
+</button>
+
+</div>
+
+<div class="calculator-right">
+
+<div class="result-box">
+
+<h3>Monthly SIP Required</h3>
+
+<h1 id="goalResult">
+
+₹0
+
+</h1>
+
+<p class="growth-note">Inflation-adjusted target: <strong id="goalInflatedAmount">&#8377;0</strong></p>
+<div class="summary compact-summary"><p>Today's Original Target <span id="goalOriginalAmount">₹ 0</span></p></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- INCOME TAX CALCULATOR -->
+<!-- ========================================= -->
+
+<section id="tax" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>Income Tax Calculator</h2>
+
+<label>Annual Income (₹)</label>
+<input type="number" id="taxIncome" placeholder="1200000">
+
+<label>Tax Rate (%)</label>
+<input type="number" id="taxRate" placeholder="10">
+
+<button id="calculateTax">
+
+Calculate Tax
+
+</button>
+
+</div>
+
+<div class="calculator-right">
+
+<div class="result-box">
+
+<h3>Tax Summary</h3>
+
+<h1 id="taxResult">₹0</h1>
+
+<div class="summary">
+
+<p>
+
+Annual Income
+
+<span id="annualIncome">₹0</span>
+
+</p>
+
+<p>
+
+Estimated Tax
+
+<span id="estimatedTax">₹0</span>
+
+</p>
+
+<p>
+
+Income After Tax
+
+<span id="afterTax">₹0</span>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- GST CALCULATOR -->
+<!-- ========================================= -->
+
+<section id="gst" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>GST Calculator</h2>
+
+<label>Amount (₹)</label>
+
+<input type="number" id="gstAmount">
+
+<label>GST (%)</label>
+
+<input type="number" id="gstRate" placeholder="18">
+
+<button id="calculateGST">
+
+Calculate GST
+
+</button>
+
+</div>
+
+<div class="calculator-right">
+
+<div class="result-box">
+
+<h3>GST Summary</h3>
+
+<div class="summary">
+
+<p>
+
+Original Amount
+
+<span id="originalAmount">₹0</span>
+
+</p>
+
+<p>
+
+GST Amount
+
+<span id="gstValue">₹0</span>
+
+</p>
+
+<p>
+
+Total Amount
+
+<span id="gstTotal">₹0</span>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- HLV CALCULATOR -->
+<!-- ========================================= -->
+
+<section id="hlv" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>Human Life Value</h2>
+
+<label>Annual Income (₹)</label>
+
+<input type="number" id="hlvIncome">
+
+<label>Working Years Remaining</label>
+
+<input type="number" id="hlvYears">
+
+<label>Expected Income Growth (%) <small>Optional</small></label>
+<input type="number" id="hlvGrowth" placeholder="6" min="0" max="100" step="0.1">
+
+<label>Discount Rate (%) <small>Optional</small></label>
+<input type="number" id="hlvDiscount" placeholder="8" min="0" max="100" step="0.1">
+
+<button id="calculateHLV">
+
+Calculate HLV
+
+</button>
+
+</div>
+
+<div class="calculator-right">
+
+<div class="result-box">
+
+<h3>Recommended Insurance Cover</h3>
+
+<h1 id="hlvResult">
+
+₹0
+
+</h1>
+
+<div class="summary compact-summary"><p>Original Annual Income <span id="hlvOriginalIncome">₹ 0</span></p><p>Years of Income Considered <span id="hlvYearsValue">0 years</span></p></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- CHILD EDUCATION -->
+<!-- ========================================= -->
+
+<section id="education" class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-box">
+
+<div class="calculator-left">
+
+<h2>Child Education Planner</h2>
+
+<label>Target Amount (₹)</label>
+
+<input type="number" id="eduAmount">
+
+<label>Years Left</label>
+
+<input type="number" id="eduYear">
+
+<label>Expected Return (%)</label>
+
+<input type="number" id="eduRate">
+
+<label>Expected Education Inflation (%) <small>Optional</small></label>
+<input type="number" id="eduInflation" placeholder="6" min="0" max="100" step="0.1">
+
+<button id="calculateEducation">
+
+Calculate
+
+</button>
+
+</div>
+
+<div class="calculator-right">
+
+<div class="result-box">
+
+<h3>Monthly SIP Required</h3>
+
+<h1 id="educationResult">
+
+₹0
+
+</h1>
+
+<div class="summary compact-summary"><p>Today's Original Target <span id="educationOriginalAmount">₹ 0</span></p><p>Inflation-adjusted Target <span id="educationInflatedAmount">₹ 0</span></p></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h2>Adrita Bima Kendra</h2><p data-i18n="site.tagline">Your trusted financial partner for Insurance, Mutual Funds, Wealth Management, Income Tax &amp; GST Services.</p></div>
+    <div><h3>Quick Links</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h3>Our Services</h3><ul><li>Life Insurance</li><li>Mutual Funds</li><li>Health Insurance</li><li>Income Tax</li><li>GST Services</li></ul></div>
+    <div><h3>Office</h3><p>&#128205; Khalna, Hattala Bazar, Joypur Road, Howrah - 711413</p><p>&#128222; 9474862701</p><p>&#9993; adritabimakendra@gmail.com</p></div>
+  </div>
+  <div class="copyright">&copy; 2026 Adrita Bima Kendra. All Rights Reserved. Powered by <a href="https://www.banisatya.com/" target="_blank" rel="noopener noreferrer">Banisatya Wealth Pvt Ltd</a>.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="calculator.js"></script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
